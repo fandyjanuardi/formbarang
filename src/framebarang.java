@@ -105,8 +105,8 @@ String objKategori[]={"Alat Tulis","Kertas","Buku","ATK"};
             }
         });
 
+        btnbatal1.setText("Keluar");
         btnbatal1.setActionCommand("Keluar");
-        btnbatal1.setLabel("Kelu");
         btnbatal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbatal1ActionPerformed(evt);
