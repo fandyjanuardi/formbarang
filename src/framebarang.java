@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author joni
+ *
  */
 public class framebarang extends javax.swing.JFrame {
     private Statement stat;
@@ -24,7 +24,7 @@ public class framebarang extends javax.swing.JFrame {
  DefaultTableModel model;
  private final String judulKolom[]={"No.","Kode Barang","Nama Barang","Kategori","Satuan","Harga","Jumlah"};
  private String[][] dataBarang;
- String objKategori[]={"Alat Tuli","Kertas","Buku","ATK"};
+ String objKategori[]={"Alat Tulis","Kertas","Buku","ATK"};
 
  
  private void setModeltabel(){
@@ -175,6 +175,7 @@ private void awal(){
             }
         });
 
+        cbkategori.setName("Pilih Kategori"); // NOI18N
         cbkategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbkategoriActionPerformed(evt);
@@ -276,21 +277,30 @@ private void awal(){
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnsimpan)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7))
+                                        .addGap(50, 50, 50))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(btnsimpan)
+                                        .addGap(32, 32, 32)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnbatal)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnedit)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnhapus)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnbatal1))
                                     .addComponent(jLabel1)
                                     .addComponent(txtkode, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtnamabarang, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -298,30 +308,21 @@ private void awal(){
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtharga, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbkategori, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(rbpcs)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(rbbox)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rbrim))))
+                                        .addComponent(rbrim))
+                                    .addComponent(cbkategori, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnbatal)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnedit)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnhapus)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnbatal1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                                .addContainerGap()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 85, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel8)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,9 +364,8 @@ private void awal(){
                     .addComponent(btnhapus))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jLabel8))
         );
 
         pack();
@@ -410,7 +410,7 @@ try{
     String sql="INSERT INTO barang VALUES ('"+txtkode.getText()+"','"+txtnamabarang.getText()+"','"+cbkategori.getSelectedItem()+"','"+satuan+"','"+txtharga.getText()+"','"+txtjumlah.getText()+"')"; 
     stat = con.createStatement();
     stat.execute(sql);
-    JOptionPane.showMessageDialog(null, "Data Berhasil di Input");
+    JOptionPane.showMessageDialog(null, "Data Berhasil disimpan");
     view_data();
     txtkode.setText(""); 
     txtnamabarang.setText("");
@@ -472,7 +472,7 @@ Connection con=objkoneksi.bukakoneksi();
 String sql="UPDATE barang SET namabarang='"+txtnamabarang.getText()+"',kategori='"+cbkategori.getSelectedItem()+"',"+ " satuan='"+satuan+"', harga='"+txtharga.getText()+"',jumlah='"+txtjumlah.getText()+"' where kodebarang='"+txtkode.getText()+"' ";
 stat = con.createStatement();
 stat.executeUpdate(sql);
-javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil diubah"); 
+javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil diedit"); 
 awal();
 view_data();
 }
